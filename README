@@ -11,3 +11,11 @@ Usage
 
  4. To list images
    make img
+
+ 5. To log into the gridding
+   make start-grid
+
+   A bash prompt(#) will appear which means you have entered the gridding container. When you exit from the container, the container will stop as well.
+
+ 6. Clean up the gridding container
+   make stop-grid
