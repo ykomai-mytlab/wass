@@ -1,0 +1,13 @@
+build*
+src/CMakeLists.txt.user
+dist/*
+ext/sba*
+WASSjs/node_modules
+doc/out
+doc/node_modules
+test/output/*
+test/output_W07/*
+test/WASS_TEST
+test/WASS_TEST.zip
+test/frames
+

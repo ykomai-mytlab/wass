@@ -1,0 +1,13 @@
+Usage
+
+ 1. To start wass
+   make start
+
+ 2. To stop wass
+   make stop
+
+ 3. To list containers
+   make cnt
+
+ 4. To list images
+   make img
