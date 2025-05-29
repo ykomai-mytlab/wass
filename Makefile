@@ -26,7 +26,7 @@ rm-nw: stop-redis
 
 ###
 start-grid:
-	sudo docker run --name grid -it -v ./gridding:/app/gridding -v ./output:/app/output -v ./frames:/app/frames gridding:latest /bin/bash
+	sudo docker run --name grid -it -v ./gridding:/app/gridding -v ./output:/app/output -v ./frames:/app/frames ykomai/gridding:latest /bin/bash
 stop-grid:
 	sudo docker stop grid && sudo docker rm grid 
 
