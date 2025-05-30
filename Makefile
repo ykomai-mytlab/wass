@@ -4,8 +4,16 @@ start: create-nw start-redis start-wass
 stop: stop-wass stop-redis rm-nw
 
 ###
-build-wass:
-	rm -rf repos && mkdir repos && cd repos && git clone https://github.com/fbergama/wass.git && cd wass && cp ../../scripts/Dockerfile . && cp ../../scripts/*.sh ./Docker && ./Docker/wass_docker_build.sh
+clone-repo:
+	rm -rf repos && mkdir repos && cd repos && git clone https://github.com/fbergama/wass.git && cd ../ && \
+	 cp ./scripts/Dockerfile ./repos/wass && cp ./scripts/*.sh ./repos/wass/Docker && \
+	 cp ./scripts/Dockerfile.gridding ./repos/wass/gridding/Dockerfile
+
+build-wass: clone-repo
+	repos/wass/Docker/wass_docker_build.sh
+
+build-gridding: clone-repo
+	cd repos/wass/gridding && docker build -t ykomai/gridding:latest . && cd ../../../
 
 ###
 create-nw:
@@ -41,8 +49,5 @@ cnt:
 img:
 	sudo docker image ls
 
-###
-data:
-	rm 
 
 
